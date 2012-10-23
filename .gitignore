@@ -1,2 +1,5 @@
 *.user
 *.suo
+Source/bin/
+Source/obj/
+Development
