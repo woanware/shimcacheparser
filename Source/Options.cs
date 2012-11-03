@@ -15,7 +15,7 @@ namespace woanware
         [Option("d", "delimiter", Required = false, DefaultValue = ",", HelpText = "The delimiter used for the export. Defaults to \",\"")]
         public string Delimiter { get; set; }
 
-        [Option("s", "sort", Required = false, HelpText = "Sort column. Valid options are: modified,updated,path,filesize,executed. Defaults to sorting by updated")]
+        [Option("s", "sort", Required = false, DefaultValue = "", HelpText = "Sort column. Valid options are: modified,updated,path,filesize,executed. Defaults to sorting by updated")]
         public string Sort { get; set; }
 
         [Option("o", "output", Required = false, DefaultValue = "", HelpText = "The output file path, including the file name")]

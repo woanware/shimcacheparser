@@ -40,6 +40,12 @@ namespace woanware
                     return;
                 }
 
+                if (File.Exists(options.File) == false)
+                {
+                    Console.WriteLine("The registry file does not exist");
+                    return;
+                }
+
                 Registry.Registry registry = new Registry.Registry(options.File);
                 RegistryKey rootKey = registry.Root;
                 foreach (RegistryKey subKey in rootKey.SubKeys())
@@ -324,6 +330,8 @@ namespace woanware
                 case "filesize":
                     return true;
                 case "executed":
+                    return true;
+                case "":
                     return true;
                 default:
                     return false;
