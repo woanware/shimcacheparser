@@ -31,7 +31,6 @@ namespace woanware
                 AddDashesToOption = true
             };
 
-            //help.AddPreOptionsLine(Environment.NewLine + "This is proprietary software written by Context Information Security and is not for redistribution.");
             this.HandleParsingErrorsInHelp(help);
 
             help.AddPreOptionsLine("Usage: shimcacheparser -f \"C:\\SYSTEM\" -d \"\\t\" -s \"path\" -o \"C:\\output.csv\"");
