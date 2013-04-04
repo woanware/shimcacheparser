@@ -60,6 +60,11 @@ namespace woanware
                         List<Hit> hits = new List<Hit>();
 
                         RegistryKey regKeySessionManager = registry.Open(string.Format(@"{0}\Control\Session Manager", subKey.Name));
+                        if (regKeySessionManager == null)
+                        {
+                            continue;
+                        }
+
                         foreach (RegistryKey subKeySessionManager in regKeySessionManager.SubKeys())
                         {
                             //@"ControlSet001\Control\Session Manager\AppCompatibility\AppCompatCache"
@@ -71,6 +76,10 @@ namespace woanware
                             }
 
                             RegistryValue regVal = subKeySessionManager.Value("AppCompatCache");
+                            if (regVal == null)
+                            {
+                                continue;
+                            }
 
                             byte[] data = (byte[])regVal.Value;
 
